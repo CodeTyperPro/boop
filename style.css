@@ -1,0 +1,446 @@
+body {
+    margin: 3rem;
+    background-color: #e3f2fd    ;
+    background-image: url("img/boop-board-game-gameplay-action.jpg");
+    min-width: 50vw;
+    /*overflow: hidden;*/
+}
+
+.header {
+    display: flex;
+    /*background-color: grey;
+     gap: 2rem; */
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.header.player1 {
+    display: flex;
+    align-self: self-start;
+}
+
+.header.boop {
+    display: flex;
+    align-self: self-center;
+}
+
+.header.player2 {
+    display: flex;
+    align-self: self-end;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.area-player1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.area-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.area-player2 {
+    display: flex;
+    flex-direction: column;
+}
+
+table, td {
+    padding: 10px;
+}
+
+@import url('https://cdn.jsdelivr.net/gh/elte-fi/www-assets@19.10.16/styles/mdss.min.css');
+
+table {
+    border: 1px solid black;
+}
+
+td {
+    border: 0.5px solid grey;
+    border-collapse: collapse;
+    width: 50px;
+    height: 50px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*width: 200px;*/
+    margin-top: 2rem;
+    margin-bottom: 20rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+    color: white;
+
+    border: 0.5rem outset rgb(248, 219, 138);
+    outline: 0.5rem solid rgb(255, 243, 220);
+    box-shadow: 0 0 0 2rem rgb(136, 184, 203);
+    border-radius: 12px;
+    font: bold 1rem sans-serif;
+    outline-offset: 0.5rem;
+
+}
+
+.button-menu {
+    width: 150px;
+    padding: .5rem;
+    margin-top: .75rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.8rem 1.4rem;
+    background-color: #85d0df;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10;
+    cursor: pointer;
+    border: none;
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: white;
+    width: 30%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer {
+    align-items: center;
+    align-self: center;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #6e7173;
+}
+
+.watch {
+    text-align: center;
+    background-color: #bbdefb;
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    padding: 1rem 1rem;
+    border-radius: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*background-color: rgba(104, 102, 102, 0.5);*/
+}
+
+
+.animate-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.span-player-name-points {
+    font-size: x-large;
+    color: rgb(69, 68, 68);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.span-active-player {
+    align-self: center;
+    align-items: center;
+    color: rgb(50, 162, 46);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+}
+
+.number-kittens-1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: rgb(201, 139, 33);
+}
+
+.number-kittens-2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: rgb(128, 133, 128);
+}
+
+.menu-font-style {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.menu-boop {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+}
+
+.support-hidden {
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.cell {
+    animation: pulse 0.3s ease-in-out infinite ;
+}
+
+.pulse {
+    animation: pulse 0.3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.25);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+
+    100% {
+        opacity: 0.5;
+        translate: scale(1);
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 450px;
+    padding: 1.3rem;
+    min-height: 250px;
+    position: absolute;
+    top: 20%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+  }
+  
+  .modal .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .div-hist {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .modalHistory h2 {
+    display: flex;
+    justify-content: flex-start center;
+    font-size: 2rem;
+    color: #ebebeb;
+    text-align: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .modalHistory {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    z-index: 3;
+    height: 90%;
+    padding: 2rem;
+  }
+  
+  .modal input {
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+  }
+
+  .span-winner-style {
+    font-size: 2rem;
+    margin: 0.4rem 0 0.2rem;
+    text-align: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .span-final-score {
+    font-size: 1.3rem;
+    margin: 0.4rem 0 0.2rem;
+    text-align: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .modal h1 {
+    font-size: 2rem;
+    color: #388848;
+    margin: 0.4rem 0 0.2rem;
+    text-align: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .div-list-history {
+    height: 550; /* set the height of the container */
+    overflow-y: scroll; /* add vertical scroll */
+  }
+  
+  button {
+    cursor: pointer;
+    border: none;
+    font-weight: 700;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10;
+  }
+
+  .btn-close-history {
+    display: inline-block;
+    flex-direction: row;
+    vertical-align: auto;
+    justify-content: center;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10;
+    width: 150px;
+  }
+  
+  .btn-open {
+    position: absolute;
+    bottom: 150px;
+  }
+  
+  .btn-close {
+    transform: translate(10px, -20px);
+    padding: 0.5rem 0.7rem;
+    background: #eee;
+    border-radius: 50%;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+  }
+
+  .overlayHistory {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 4;
+  }
+
+  .modal {
+    z-index: 2;
+  }
+
+  .modalHistory {
+    z-index: 7;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+.btn-save {
+    display: inline-block;
+    padding: 0.8rem 1.4rem;
+    background-color: rgb(91, 91, 91);
+    color: rgb(185, 226, 255);
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1em;
+    margin-top: 10;
+    width: 40%;
+  }
+
+@import "compass/css3";
+
+li {
+  font: 200 20px Helvetica, Verdana, sans-serif;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem;
+  transition: 2s ease, 2s ease;
+  display: block;
+  color: #ebebeb;
+}
+
+li:hover {
+  font-size: 20px;
+  background: #e7aa1d;
+}

@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boop</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div>
+        <!-- ==================== START MENU AREA ======================== -->
+        <div id ="div-menu" class="menu">
+            <h1 class="menu-boop">Boop</h1>
+            <form id="form">
+                <label for="first-player-name" class="menu-font-style">First Player's name:</label>
+                <input type="text" id="first-player-name" name="first-player-name" value="Martins"><br>
+
+                <label for="second-player-name" class="menu-font-style">Second Player's name:</label>
+                <input type="text" id="second-player-name" name="second-player-name" value="Alfredo"><br>
+
+                <label for="number-of-points" class="menu-font-style">Number Of Points:</label>
+                <input type="number" id="number-of-points" name="number-of-points" min="2" max="16"  value="2"><br>
+
+                <label for="number-of-kittens-per-player" class="menu-font-style">Number of Kittens/Player:</label>
+                <input type="number" id="number-of-kittens-per-player" name="number-of-kittens-per-player" min="8" max="16"  value="8"><br>
+
+                <label for="board-dimension" class="menu-font-style">Board dimension:</label>
+                <input type="number" id="board-dimension" name="board-dimension" min="5" max="10" value="6"><br>
+
+                <button id="button-play" class="button-menu">Play</button>
+                <button id="button-history" class="button-menu">History</button>
+                <button id="button-clear-history" class="button-menu">Clear History</button>
+            </form>
+        </div>
+
+        <div id="div-hist" class="div-hist">
+            <!-- =========== START HISTORY MODAL =========== -->
+            <section class="modalHistory hidden">
+                <div >
+                    <h2>History</h2>
+
+                    <div class="div-list-history">
+                        <ul class="list-history">
+                            <li>First</li>
+                            <li>Second</li>
+                        </ul>                        
+                    </div>
+                        
+
+                </div>
+    
+                <button id="button-close-history" class="btn-close-history">Close</button>
+            </section>
+    
+            <div class="overlayHistory hidden"></div>
+            <!-- =========== ENDS HISTORY MODAL =========== -->
+        </div>
+
+        
+    </div>
+        <!-- ==================== ENDS MENU AREA ======================== -->
+
+    <div id="div-game">
+        <div class="container">
+            <!-- ==================== START HEADER ======================== -->
+            <div id="div-header" class="header">
+                <div class="player1">
+                    <span id="name-player-1" class="span-player-name-points">Player 1</span> <br>
+                    <span id="score-player-1" class="span-player-name-points">Points: 4</span>
+                </div>
+                <div class="boop">
+                    <div class="watch">
+                        <div id="div-timer" class="timer">
+                            02 : 00
+                        </div>
+                    </div>
+                </div>
+                <div class="player2">
+                    <span id="name-player-2" class="span-player-name-points">Player 2</span> <br>
+                    <span id="score-player-2" class="span-player-name-points">Points: 4</span>
+                </div>
+            </div>
+            <!-- ==================== ENDS HEADER ======================== -->
+
+        </div>  
+        
+        <!-- ==================== START GAME AREA ======================== -->
+        <div id="div-game-area" class="game-area">
+            <div class="area-player1">
+                <div class="kittens-player1">
+                    <span class="number-kittens-1">8 Orange Kittens</span>
+                    <table id="bench-kittens-player-1"> 
+                    </table>
+                </div>
+            </div>
+
+            <div class="area-board">
+                <span class="span-active-player">Active Player</span>
+                <!-- <span>Board</span> -->
+
+                    <table id="table-board">
+                        
+                    </table>
+
+                    <button id="btn-save" class="btn-save">Save</button>
+
+                <!-- ==== Winner Modal -->
+                <section class="modal hidden">
+                    <div>
+                        <h1>CONGRATULATIONS</h1>
+                        <br> 
+                        <span id="span-winner" class="span-winner-style">Player X WON</span>
+                    </div>
+                        <br>
+                        <span id="span-final-score" class="span-final-score">0 - 0</span>
+                        <br>
+                    <button id="btn-play-again" class="btn">Play Again</button>
+                </section>
+
+                <div class="overlay hidden"></div>
+            </div>
+
+            <div class="area-player2">
+                <div class="kittens-player2">
+                    <span class="number-kittens-2">8 Grey Kittens</span>
+                    <table id="bench-kittens-player-2"></table>
+                </div>
+            </div>
+        </div>
+        <!-- ==================== ENDS GAME AREA ======================== -->
+
+    </section>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
