@@ -2,7 +2,7 @@
 
 The Boop Game is a simplified version of the board game "Boop" implemented as a browser-based application using native JavaScript. The goal of the game is to have three kittens of the same color next to each other horizontally, vertically, or diagonally on a 6x6 grid.
 
-" ![Boop](boop_rules_v1.pdf) "
+<embed src="boop_rules_v1.pdf" type="application/pdf" width="100%" height="600px" >
 
 ## Demo Prototype
 
@@ -45,4 +45,4 @@ The Boop Game is implemented using native JavaScript, HTML, and CSS. No addition
 
 ## Credits
 
-The Boop Game implementation is created by [Your Name].
+The Boop Game implementation is created by `Alfredo Martins`.
